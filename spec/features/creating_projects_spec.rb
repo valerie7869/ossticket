@@ -1,12 +1,10 @@
 require "rails_helper"
 RSpec.feature "Create new project" do
 	before do 
-		visit root_path
+		visit "/"
         click_link "New Project"
 	end
-  scenario "creating new Project" do
-    visit root_path
-    click_link "New Project"
+  scenario "with valid attributes" do
     fill_in "Name", with: "Sublime Text 3"
     fill_in "Description", with: "A text editor for everyone"
     click_button "Create Project"
@@ -18,4 +16,12 @@ RSpec.feature "Create new project" do
     title = "Sublime Text 3 - Projects - OSSTicket"
     expect(page).to have_title title
   end
+
+    scenario "when providing invalid attributes" do
+      click_button "Create Project"
+
+      expect(page).to have_content "Project has not been created."
+      expect(page).to have_content "Name can't be blank"
+    end
+
 end
