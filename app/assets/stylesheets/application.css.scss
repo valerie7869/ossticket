@@ -25,9 +25,10 @@
     padding-right: 0.5em;
     }
   }
-a.new {
+  a.new {
   @extend .btn-success;
   &:before {
+  @extend .fa-plus;
 /******* this was adding extra '+'' onto button
     @extend .fa-plus;
 ***/
