@@ -5,8 +5,8 @@
   <header>
     <h2><%= @ticket.name %></h2>
 </header>
-  <%= simple_format(@ticket.description) %>
 
+<%= simple_format(@ticket.description) %>
 
 <% if @ticket.attachment.present? %>
   <h4>Attachment</h4>
