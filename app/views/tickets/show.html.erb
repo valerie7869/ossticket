@@ -1,15 +1,15 @@
 <div id="ticket">
   <header>
-    <h1><%= @project.name %></h1>
+    <h3><%= @project.name %></h3>
   </header>
   <header>
-    <h2><%= @ticket.name %></h2>
+    <h5><%= @ticket.name %></h5>
 </header>
 
 <%= simple_format(@ticket.description) %>
 
 <% if @ticket.attachment.present? %>
-  <h4>Attachment</h4>
+  <h6>Attachment:</h6>
   <div class="attachment">
     <p>
       <%= link_to File.basename(@ticket.attachment.url),
@@ -20,9 +20,9 @@
 <% end %>
 
 </div>
-
+<div></div>
 <header>
-  <h2><%= @ticket.name %></h2>
+  <h5><%= @ticket.name %></h5>
   <ul class="actions">
     <li><%= link_to "Edit Ticket", [:edit, @project, @ticket],
       class: "edit" %></li>
